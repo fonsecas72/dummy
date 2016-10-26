@@ -6,27 +6,11 @@ name: 'dummy'
 # The type key specifies the language and version for your application.
 type: 'php:7.0'
 
-# On PHP, there are multiple build flavors available. Pretty much everyone except
-# Drupal 7 users will want the composer flavor.
-#build:
-#  flavor: 'composer'
-
-# The relationships of the application with services or other applications.
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form `<service name>:<endpoint name>`.
-#relationships:
-#    database: 'mysqldb:mysql'
-
 # The configuration of app when it is exposed to the web.
 web:
     locations:
         "/":
             root: ""
-            passthru: "index.php"
-            index:
-                - index.php
-            expires: -1
             scripts: true
             allow: true
 
@@ -37,7 +21,6 @@ disk: 2048
 # path is relative to the application root, where this file lives.
 mounts:
     '/web/files': 'shared:files/files'
-
 
 # The hooks that will be performed when the package is deployed.
 hooks:
