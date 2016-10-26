@@ -47,7 +47,7 @@ mounts:
 hooks:
     # Build hooks can modify the application files on disk, but not access any services like databases.
     build: |
-      apt-get install apache2 -y
+      echo build!!
     # Deploy hooks can access services, but the file system is now read-only.
     deploy: |
       echo deployyyyy
