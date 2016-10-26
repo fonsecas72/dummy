@@ -1,0 +1,5 @@
+<?php
+
+echo "HELLLO WORD!!";
+
+?>

@@ -19,20 +19,15 @@ type: 'php:7.0'
 #    database: 'mysqldb:mysql'
 
 # The configuration of app when it is exposed to the web.
-#web:
-#    locations:
-#        '/':
-#            # The public directory of the app, relative to its root.
-#            root: '.'
-#            # The front-controller script to send non-static requests to.
-#            passthru: '/app.php'
-#        # Allow uploaded files to be served, but do not run scripts.
-#        # Missing files get mapped to the front controller above.
-#        '/files':
-#            root: 'web/files'
-#            scripts: false
-#            allow: true
-#            passthru: '/app.php'
+web:
+    locations:
+        root: "public"
+        passthru: "/index.php"
+        index:
+         - index.php
+        expires: -1
+        scripts: true
+        allow: true
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
