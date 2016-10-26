@@ -6,33 +6,13 @@ name: 'dummy'
 # The type key specifies the language and version for your application.
 type: 'php:7.0'
 
-# On PHP, there are multiple build flavors available. Pretty much everyone except
-# Drupal 7 users will want the composer flavor.
-#build:
-#  flavor: 'composer'
-
-# The relationships of the application with services or other applications.
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form `<service name>:<endpoint name>`.
-#relationships:
-#    database: 'mysqldb:mysql'
-
 # The configuration of app when it is exposed to the web.
-#web:
-#    locations:
-#        '/':
-#            # The public directory of the app, relative to its root.
-#            root: '.'
-#            # The front-controller script to send non-static requests to.
-#            passthru: '/app.php'
-#        # Allow uploaded files to be served, but do not run scripts.
-#        # Missing files get mapped to the front controller above.
-#        '/files':
-#            root: 'web/files'
-#            scripts: false
-#            allow: true
-#            passthru: '/app.php'
+web:
+    locations:
+        "/":
+            root: ""
+            scripts: true
+            allow: true
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -42,12 +22,11 @@ disk: 2048
 mounts:
     '/web/files': 'shared:files/files'
 
-
 # The hooks that will be performed when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk, but not access any services like databases.
     build: |
-      sudo apt-get install apache2 -y
+      echo build!!
     # Deploy hooks can access services, but the file system is now read-only.
     deploy: |
       echo deployyyyy
