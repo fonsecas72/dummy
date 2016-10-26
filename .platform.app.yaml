@@ -22,7 +22,7 @@ type: 'php:7.0'
 web:
     locations:
         "/":
-            root: "/"
+            root: ""
             passthru: "/index.php"
             index:
                 - index.php
