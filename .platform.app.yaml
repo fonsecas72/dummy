@@ -23,7 +23,7 @@ web:
     locations:
         "/":
             root: ""
-            passthru: "/index.php"
+            passthru: "index.php"
             index:
                 - index.php
             expires: -1
